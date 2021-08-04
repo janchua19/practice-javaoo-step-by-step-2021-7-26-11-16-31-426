@@ -9,7 +9,7 @@ public class Student extends  Person{
     }
 
     public String introduce(){
-        return "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Student. I am at Class " + klass + ".";
+        return "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Student. I am at Class " + klass.getNumber() + ".";
     }
 
     public Klass getKlass() {
