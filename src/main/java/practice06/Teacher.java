@@ -26,6 +26,9 @@ public class Teacher extends Person{
     }
 
     public String introduceWith(Student jerry) {
-        return "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Teacher. I teach " + jerry.getName()+ ".";
+        String message = "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Teacher.";
+        if (jerry.klass.getNumber() == klass.getNumber())
+            return message + " I teach " + jerry.getName()+ ".";
+        return message + " I don't teach " + jerry.getName()+ ".";
     }
 }
