@@ -23,8 +23,13 @@ public class Teacher extends  Person{
         return klass;
     }
 
-    @Override
-    public String introduce() {
-        return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName()+".";
+    String message = "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Teacher.";
+
+    public String introduce(){
+        String message =  super.introduce() + " I am a Teacher.";
+        if(klass != null) {
+            return message + " I teach Class " + klass + ".";
+        }
+        return message + " I teach No Class.";
     }
 }
