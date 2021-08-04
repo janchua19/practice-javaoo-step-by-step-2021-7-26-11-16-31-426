@@ -19,4 +19,8 @@ public class Student extends Person{
         else
             return message + " I am at Class " + klass.getNumber() + ".";
     }
+
+    public Klass getKlass() {
+        return klass;
+    }
 }
