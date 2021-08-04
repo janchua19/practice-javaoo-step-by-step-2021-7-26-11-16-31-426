@@ -6,8 +6,22 @@ public class Student extends Person{
         super(id, name, age);
     }
 
+    public Student(int id, String name, int age, Klass klass) {
+        super(id, name, age);
+        this.klass = klass;
+    }
+
     public String introduce(){
         String message = super.introduce() + " I am a Student.";
-        return message + " I am at Class " + klass.getNumber() + ".";
+        if(!this.equals(klass.getLeader())){
+            return message + " I am at Class " + klass.getNumber() + ".";
+        }
+        else
+            return message + " I am Leader of Class " + klass.getNumber() + ".";
+    }
+
+
+    public Klass getKlass() {
+        return klass;
     }
 }

@@ -49,20 +49,18 @@ public class Practice08Test {
         assertThat(klass.getDisplayName()).isEqualTo("Class 2");
     }
 
-//    @Test
-//    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
-//
-//        klass.assignLeader(jerry);
-//
-//        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
-//        assertThat(klass.getLeader()).isNotEqualTo(jerry);
-//    }
-//
-//    private String systemOut() {
-//        return outContent.toString();
-//    }
-//
+    @Test
+    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
+        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
+        klass.assignLeader(jerry);
+        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
+        assertThat(klass.getLeader()).isNotEqualTo(jerry);
+    }
+
+    private String systemOut() {
+        return outContent.toString();
+    }
+
 //    @Test
 //    public void should_class_assign_a_member_student_as_leader() throws Exception {
 //        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
@@ -92,7 +90,7 @@ public class Practice08Test {
 //        klass.assignLeader(tom);
 //        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
 //    }
-//
+
 //    @Test
 //    public void should_teacher_have_name_and_age_and_class() throws Exception {
 //        Teacher tom = new Teacher(1, "Tom", 21, klass);
@@ -100,7 +98,7 @@ public class Practice08Test {
 //        assertThat(tom.getAge()).isEqualTo(21);
 //        assertThat(tom.getKlass()).isEqualTo(klass);
 //    }
-//
+
 //    @Test
 //    public void should_teacher_introduce_itself_with_which_class_it_teaches() throws Exception {
 //        Teacher tom = new Teacher(1, "Tom", 21, klass);
