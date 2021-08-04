@@ -8,6 +8,10 @@ public class Teacher extends Person{
         this.klass = klass;
     }
 
+    public Teacher(String name, int age) {
+        super(name, age);
+    }
+
     public String introduce(){
         String message = "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Teacher.";
         if(klass != null){
