@@ -3,7 +3,9 @@ package practice07;
 import java.util.Objects;
 
 public class Student extends Person{
+
     Klass klass;
+
     public Student(int id, String name, int age) {
         super(id, name, age);
     }
@@ -24,7 +26,7 @@ public class Student extends Person{
             return message + " I am at Class " + klass.getNumber() + ".";
         }
         else
-            return message + " I am at Leader of Class " + klass.getNumber() + ".";
+            return message + " I am Leader of Class " + klass.getNumber() + ".";
     }
 
     public Klass getKlass() {
