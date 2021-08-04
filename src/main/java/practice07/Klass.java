@@ -12,4 +12,7 @@ public class Klass {
         return number;
     }
 
+    public String getDisplayName() {
+        return "Class " + number;
+    }
 }
