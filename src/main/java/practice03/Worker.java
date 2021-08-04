@@ -1,20 +1,9 @@
 package practice03;
 
-public class Worker {
-    private String name;
-    private int age;
+public class Worker extends Person{
 
     public Worker(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
+        super(name, age);
     }
 
     public String introduce() {
