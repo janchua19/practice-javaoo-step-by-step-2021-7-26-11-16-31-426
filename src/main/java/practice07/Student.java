@@ -25,4 +25,8 @@ public class Student extends Person{
         }
         return " I am at Class " + klass.getNumber() + ".";
     }
+
+    public Klass getKlass() {
+        return klass;
+    }
 }
