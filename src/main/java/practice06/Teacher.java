@@ -16,4 +16,8 @@ public class Teacher extends Person{
         else
             return message + " I teach No Class.";
     }
+
+    public Klass getKlass() {
+        return klass;
+    }
 }
