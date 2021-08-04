@@ -20,10 +20,11 @@ public class Student extends Person{
 
     public String introduce(){
         String message = "My name is " + super.getName() + ". I am " + super.getAge() + " years old. I am a Student.";
-        if(klass.getLeader().equals(super.getName())){
-            return " I am at Leader of Class " + klass.getNumber() + ".";
+        if(!this.equals(klass.getLeader())){
+            return message + " I am at Class " + klass.getNumber() + ".";
         }
-        return " I am at Class " + klass.getNumber() + ".";
+        else
+            return message + " I am at Leader of Class " + klass.getNumber() + ".";
     }
 
     public Klass getKlass() {
