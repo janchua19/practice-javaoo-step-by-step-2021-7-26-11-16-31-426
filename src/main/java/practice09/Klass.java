@@ -25,11 +25,16 @@ public class Klass {
     }
 
     public void assignLeader(Student leader) {
-        if(student != null && student.contains(getLeader())) {
+        if(student != null && student.contains(leader)) {
             this.leader = leader;
         }
         else {
             System.out.print("It is not one of us.\n");
         }
+    }
+
+    public void appendMember(Student stud) {
+        student = new ArrayList<>();
+        student.add(stud);
     }
 }
