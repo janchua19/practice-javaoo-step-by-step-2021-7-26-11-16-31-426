@@ -17,6 +17,9 @@ public class Student extends Person{
 
     public String introduce(){
         String message = super.introduce() + " I am a Student.";
-        return message += " I am at Class " + klass.getNumber() + ".";
+
+            message += " I am at Class " + klass.getNumber() + ".";
+
+        return message;
     }
 }
