@@ -61,6 +61,8 @@ public class Teacher extends Person{
         String message = super.introduce() + " I am a Teacher.";
         List<Klass> newKlasses = new LinkedList<>();
 
+        message += " I teach " + student.getName() + ".";
+
         return message;
     }
 }
