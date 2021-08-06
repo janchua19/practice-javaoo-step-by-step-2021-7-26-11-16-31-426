@@ -3,6 +3,7 @@ package practice10;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     private Klass klass;
@@ -61,7 +62,14 @@ public class Teacher extends Person{
         String message = super.introduce() + " I am a Teacher.";
         List<Klass> newKlasses = new LinkedList<>();
 
-        message += " I teach " + student.getName() + ".";
+        newKlasses = klasses.stream().filter(klass -> klass.getNumber() == student.getKlass().getNumber()).collect(Collectors.toList());
+
+        if(!newKlasses.isEmpty()) {
+            message += " I teach " + student.getName() + ".";
+        }
+        else {
+            message += " I don't teach " + student.getName() + ".";
+        }
 
         return message;
     }
