@@ -14,4 +14,11 @@ public class Klass {
     public String getDisplayName() {
         return "Class " + getNumber();
     }
+
+    public void assignLeader(Student student) {
+    }
+
+    public Student getLeader() {
+        return null;
+    }
 }
