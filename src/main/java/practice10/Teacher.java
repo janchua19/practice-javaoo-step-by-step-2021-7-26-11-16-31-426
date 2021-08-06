@@ -51,4 +51,8 @@ public class Teacher extends Person{
         }
         return message;
     }
+
+    public boolean isTeaching(Student student) {
+        return false;
+    }
 }
