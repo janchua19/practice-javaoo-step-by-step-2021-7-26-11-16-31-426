@@ -22,4 +22,8 @@ public class Klass {
     public Student getLeader() {
         return null;
     }
+
+    public Student appendMember(Student name) {
+        return null;
+    }
 }
