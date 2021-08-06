@@ -1,7 +1,5 @@
 package practice09;
 
-import practice08.Student;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -49,5 +47,9 @@ public class Teacher extends Person{
 
     public LinkedList<Klass> getKlasses() {
         return klasses;
+    }
+
+    public boolean isTeaching(Student student) {
+        return false;
     }
 }
