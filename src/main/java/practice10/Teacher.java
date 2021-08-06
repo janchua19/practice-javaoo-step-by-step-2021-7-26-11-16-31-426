@@ -44,7 +44,10 @@ public class Teacher extends Person{
                     message += ", ";
                 }
             }
-            return message += ".";
+            message += ".";
+        }
+        else {
+            message += " I teach No Class.";
         }
         return message;
     }
