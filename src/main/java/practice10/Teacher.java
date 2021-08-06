@@ -24,4 +24,12 @@ public class Teacher extends Person{
     public void setKlass(Klass klass) {
         this.klass = klass;
     }
+
+    @Override
+    public String introduce() {
+        String message = super.introduce() + " I am a Teacher.";
+
+
+        return message;
+    }
 }
