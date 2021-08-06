@@ -52,4 +52,8 @@ public class Teacher extends Person{
     public boolean isTeaching(Student student) {
         return klasses.contains(student.getKlass());
     }
+
+    public String introduceWith(Student student) {
+        return null;
+    }
 }
