@@ -20,7 +20,9 @@ public class Student extends Person{
         if(!this.equals(klass.getLeader())){
             message += " I am at Class " + klass.getNumber() + ".";
         }
+        else {
             message += " I am Leader of Class " + klass.getNumber() + ".";
+        }
         return message;
     }
 }

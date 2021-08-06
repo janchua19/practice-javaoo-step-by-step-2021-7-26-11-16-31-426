@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     //private int classes;
-    List<Object> classes = new ArrayList<>();
+
     private LinkedList<Klass> klasses;
 
     public Teacher(int id, String name, int age) {
