@@ -6,6 +6,7 @@ public class Person {
     private int id;
     private String name;
     private int age;
+    private String message;
 
     public Person(int id, String name, int age) {
         this.id = id;
@@ -36,6 +37,7 @@ public class Person {
     }
 
     public String introduce() {
-        return null;
+        message = "My name is " + name + ". I am " + age + " years old.";
+        return message;
     }
 }
