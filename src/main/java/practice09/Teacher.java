@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     //private int classes;
@@ -55,6 +56,15 @@ public class Teacher extends Person{
 
     public String introduceWith(Student student) {
         String message = super.introduce() + " I am a Teacher.";
-        return message += " I teach " + student.getName() + ".";
+        List<Klass> newKlasses = new LinkedList<>();
+
+        newKlasses = klasses.stream().filter(klass -> klass.getNumber() == student.getKlass().getNumber()).collect(Collectors.toList());
+
+        if(!newKlasses.isEmpty()) {
+            return message += " I teach " + student.getName() + ".";
+        }
+        else {
+            return message += " I don't teach " + student.getName() + ".";
+        }
     }
 }
