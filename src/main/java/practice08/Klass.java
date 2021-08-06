@@ -6,7 +6,7 @@ import java.util.List;
 public class Klass {
     private Integer number;
     private Student leader;
-    List<Student> stud = new ArrayList<>();
+    List<Student> stud;
 
     public Klass(int number) {
         this.number = number;

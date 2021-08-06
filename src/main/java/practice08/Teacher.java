@@ -1,7 +1,7 @@
 package practice08;
 
 public class Teacher extends Person{
-    Klass klass;
+    private Klass klass;
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
@@ -19,11 +19,12 @@ public class Teacher extends Person{
         return message + " I teach No Class.";
     }
 
-    public String introduceWith(Student jerry) {
+    public String introduceWith(Student student) {
         String message = super.introduce() + " I am a Teacher.";
-        if (jerry.klass.getNumber() == klass.getNumber())
-            return message + " I teach " + jerry.getName()+ ".";
-        return message + " I don't teach " + jerry.getName()+ ".";
+        if (student.klass.getNumber() == klass.getNumber()) {
+            return message + " I teach " + student.getName() + ".";
+        }
+        return message + " I don't teach " + student.getName()+ ".";
     }
 
     public Klass getKlass() {
