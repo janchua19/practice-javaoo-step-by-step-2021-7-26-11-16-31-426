@@ -7,7 +7,9 @@ public class Klass {
     private int number;
     private Student leader;
     private Student name;
+    private Teacher teacherAssign;
     List<Student> student = new ArrayList<>();
+    List<Teacher> teacher = new ArrayList<>();
 
 
     public Klass(int number) {
@@ -37,5 +39,14 @@ public class Klass {
     public void appendMember(Student stud) {
         student = new ArrayList<>();
         student.add(stud);
+
+        if(teacher != null){
+            teacher.stream().forEach(teacherAssign -> teacherAssign.notifyTeacher(this,leader));
+        }
+    }
+
+    public void addTeachers(Teacher teachers) {
+        teacher = new ArrayList<>();
+        teacher.add(teachers);
     }
 }

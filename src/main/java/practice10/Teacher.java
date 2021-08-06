@@ -8,6 +8,13 @@ import java.util.stream.Collectors;
 public class Teacher extends Person{
     private Klass klass;
     private LinkedList<Klass> klasses;
+    private Klass klasses1;
+
+    public Teacher(int id, String name, int age, Klass klasses1) {
+        super(id, name, age);
+        this.klasses1 = klasses1;
+        klasses1.addTeachers(this);
+    }
 
     public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
@@ -72,5 +79,9 @@ public class Teacher extends Person{
         }
 
         return message;
+    }
+
+    public void notifyTeacher(Klass klass, Student leader) {
+
     }
 }
