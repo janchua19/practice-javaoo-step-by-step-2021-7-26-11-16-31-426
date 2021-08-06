@@ -53,6 +53,6 @@ public class Teacher extends Person{
     }
 
     public boolean isTeaching(Student student) {
-        return false;
+        return klasses.contains(student.getKlass());
     }
 }
