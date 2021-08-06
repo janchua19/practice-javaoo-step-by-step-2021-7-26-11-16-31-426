@@ -2,6 +2,7 @@ package practice10;
 
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Teacher extends Person{
     private Klass klass;
@@ -54,5 +55,12 @@ public class Teacher extends Person{
 
     public boolean isTeaching(Student student) {
         return klasses.contains(student.getKlass());
+    }
+
+    public String introduceWith(Student student) {
+        String message = super.introduce() + " I am a Teacher.";
+        List<Klass> newKlasses = new LinkedList<>();
+
+        return message;
     }
 }
