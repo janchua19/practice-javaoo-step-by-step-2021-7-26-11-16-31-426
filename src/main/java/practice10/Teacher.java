@@ -46,7 +46,14 @@ public class Teacher extends Person{
         if(linkedList != null) {
             message += " I teach Class ";
 
-
+            for(Klass klass : linkedList) //Delete
+            {
+                int i;
+                message += klass.getNumber();
+                if(klass != linkedList.getLast()){ //Delete
+                    message += ", ";
+                }
+            }
             message += ".";
         }
         else {

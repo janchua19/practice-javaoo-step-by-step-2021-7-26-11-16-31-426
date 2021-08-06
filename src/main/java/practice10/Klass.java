@@ -45,7 +45,10 @@ public class Klass {
         if(studentMember != null && studentMember.contains(leader))
         {
             this.leader = leader;
-
+            if(teachers != null)// Delete
+            {
+                teachers.forEach(teacher -> teacher.notifyTeacher(this, leader));
+            }
         } else {
             System.out.print("It is not one of us.\n");
         }
