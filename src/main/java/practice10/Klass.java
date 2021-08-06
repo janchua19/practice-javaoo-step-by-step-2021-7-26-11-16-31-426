@@ -15,7 +15,8 @@ public class Klass {
         return "Class " + getNumber();
     }
 
-    public void assignLeader(Student student) {
+    public void assignLeader(Student leader) {
+        System.out.print("It is not one of us.\n");
     }
 
     public Student getLeader() {
