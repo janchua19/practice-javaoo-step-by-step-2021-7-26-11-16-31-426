@@ -7,18 +7,19 @@ import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     private Klass klass;
-    private LinkedList<Klass> klasses;
-    private Klass klasses1;
+    private LinkedList<Klass> linkedList;
 
-    public Teacher(int id, String name, int age, Klass klasses1) {
+
+    public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
-        this.klasses1 = klasses1;
-        klasses1.addTeachers(this);
+        this.klass = klass;
+        klass.addTeachers(this);
     }
 
     public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
-        this.klasses = klasses;
+        this.linkedList = klasses;
+        klasses.forEach(klass1 -> klass1.addTeachers(this));
     }
 
     public Teacher(int id, String name, int age) {
@@ -27,7 +28,7 @@ public class Teacher extends Person{
 
     public LinkedList<Klass> getClasses() {
 
-        return klasses;
+        return linkedList;
     }
 
     public Klass getKlass() {
@@ -42,17 +43,10 @@ public class Teacher extends Person{
     public String introduce() {
         String message = super.introduce() + " I am a Teacher.";
 
-        if(klasses != null) {
+        if(linkedList != null) {
             message += " I teach Class ";
 
-            for(Klass klass : klasses)
-            {
-                int i;
-                message += klass.getNumber();
-                if(klass != klasses.getLast()){
-                    message += ", ";
-                }
-            }
+
             message += ".";
         }
         else {
@@ -62,14 +56,14 @@ public class Teacher extends Person{
     }
 
     public boolean isTeaching(Student student) {
-        return klasses.contains(student.getKlass());
+        return linkedList.contains(student.getKlass());
     }
 
     public String introduceWith(Student student) {
         String message = super.introduce() + " I am a Teacher.";
-        List<Klass> newKlasses = new LinkedList<>();
+        List<Klass> newKlasses;
 
-        newKlasses = klasses.stream().filter(klass -> klass.getNumber() == student.getKlass().getNumber()).collect(Collectors.toList());
+        newKlasses = linkedList.stream().filter(klass -> klass.getNumber() == student.getKlass().getNumber()).collect(Collectors.toList());
 
         if(!newKlasses.isEmpty()) {
             message += " I teach " + student.getName() + ".";
@@ -81,7 +75,14 @@ public class Teacher extends Person{
         return message;
     }
 
-    public void notifyTeacher(Klass klass, Student leader) {
+    public void notifyStudentJoinClass(Klass klass, Student student)
+    {
+        String message = "I am " + this.getName() + ". I know " + student.getName() + " has joined Class " + klass.getNumber() + ".\n";
+        System.out.print(message);
+    }
 
+    public void notifyTeacher(Klass klass, Student leader) {
+        String message = "I am " + this.getName() + ". I know " + leader.getName() + " become Leader of Class " + klass.getNumber() + ".\n";
+        System.out.print(message);
     }
 }
