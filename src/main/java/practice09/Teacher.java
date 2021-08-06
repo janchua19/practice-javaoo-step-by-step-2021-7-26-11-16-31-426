@@ -23,10 +23,19 @@ public class Teacher extends Person{
 
     public String introduce(){
         String message = super.introduce() + " I am a Teacher.";
-        if(!classes.isEmpty())
-            return message + " I teach Class ";
+        if(klasses != null) {
+            message += " I teach Class ";
 
-        else
+            for(Klass klass : klasses)
+            {
+                int i;
+                message += klass.getNumber();
+                if(klass != klasses.getLast()){
+                    message += ", ";
+                }
+            }
+            return message += ".";
+        }
             return message + " I teach No Class.";
     }
 
