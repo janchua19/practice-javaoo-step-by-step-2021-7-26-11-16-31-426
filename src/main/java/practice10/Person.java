@@ -13,10 +13,10 @@ public class Person {
 
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public int getAge() {
-        return 0;
+        return age;
     }
 }
