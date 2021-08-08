@@ -25,7 +25,7 @@ public class Klass {
     }
 
     public void assignLeader(Student leader) {
-        if(stud != null && stud.contains(getLeader())) {
+        if(stud != null && stud.contains(leader)) {
             this.leader = leader;
         }
         else {

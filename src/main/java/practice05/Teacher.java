@@ -5,6 +5,7 @@ public class Teacher extends Person{
 
     public Teacher(String name, int age, int klass) {
         super(name, age);
+        this.klass = klass;
     }
 
     public Teacher(String name, int age) {
@@ -22,6 +23,8 @@ public class Teacher extends Person{
         if(klass != null) {
             return message + " I teach Class " + klass + ".";
         }
+        else {
             return message + " I teach No Class.";
+        }
     }
 }
