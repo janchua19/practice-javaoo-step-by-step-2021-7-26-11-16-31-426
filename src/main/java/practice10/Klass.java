@@ -55,7 +55,6 @@ public class Klass {
     }
 
     public void appendMember(Student student) {
-
         studentMember = new ArrayList<>();
         studentMember.add(student);
         if(teachers != null)
