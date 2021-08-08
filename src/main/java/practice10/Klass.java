@@ -58,7 +58,10 @@ public class Klass {
 
         studentMember = new ArrayList<>();
         studentMember.add(student);
-        teachers.stream().forEach(teacher -> teacher.notifyStudentJoinClass(this, student));
+        if(teachers != null)
+        {
+            teachers.stream().forEach(teacher -> teacher.notifyStudentJoinClass(this, student));
+        }
     }
 
     public void addTeachers(Teacher teacher) {
